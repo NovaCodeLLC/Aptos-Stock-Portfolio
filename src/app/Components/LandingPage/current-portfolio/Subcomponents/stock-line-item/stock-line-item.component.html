@@ -1,0 +1,6 @@
+<span>
+  <div id="Symbol" class="ui-g-3">{{lineItem?.getSymbol()}}</div>
+  <div id="shares" class="ui-g-3">{{lineItem?.getShares()}}</div>
+  <div id="stockPrice" class="ui-g-3">{{lineItem?.getStockPrice() | currency : 'USD' : true}}</div>
+  <div id="totalValue" class="ui-g-3">{{lineItem?.getTotalStockVal() | currency : 'USD' : true}}</div>
+</span>

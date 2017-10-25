@@ -1,0 +1,14 @@
+<div id="startPortfolioSummary" class="ui-g" *ngIf="portfolioDataSet">
+  <div id="tableHeaders" class="ui-g-12 ui-widget-header">
+    <div id="headSymbol" class="ui-g-3">Stock Symbol</div>
+    <div id="headShares" class="ui-g-3">Number of Owned Shares</div>
+    <div id="headPrice" class="ui-g-3">Price per Stock Unit</div>
+    <div id="headTotal" class="ui-g-3">Total Value of Stock Owned</div>
+  </div>
+
+  <div class="ui-g-12">
+    <div *ngFor="let lineItem of portfolioDataSet; i as index">
+      <app-stock-line-item [lineItem]="lineItem"></app-stock-line-item>
+    </div>
+  </div>
+</div>
