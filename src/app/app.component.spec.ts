@@ -1,7 +1,7 @@
 import {TestBed, async, inject} from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
-import {SummaryComponent} from "./Components/LandingPage/current-portfolio/summary.component";
+import {SummaryComponent} from "./Components/LandingPage/current-portfolio/Subcomponents/summary-component/summary.component";
 import {GetStocksService} from "./Components/LandingPage/current-portfolio/Services/get-stocks.service";
 import {HttpModule} from "@angular/http";
 

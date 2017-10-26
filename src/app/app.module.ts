@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { SummaryComponent } from './Components/LandingPage/current-portfolio/summary.component';
+import { SummaryComponent } from './Components/LandingPage/current-portfolio/Subcomponents/summary-component/summary.component';
 import {GetStocksService} from "./Components/LandingPage/current-portfolio/Services/get-stocks.service";
 import {HttpClientModule} from "@angular/common/http";
 import { StockLineItemComponent } from './Components/LandingPage/current-portfolio/Subcomponents/stock-line-item/stock-line-item.component';
@@ -12,6 +12,8 @@ import {CommonModule} from "@angular/common";
 import {IterableMap} from "./Components/LandingPage/current-portfolio/Pipes-Directives/Pipes/IterableMap";
 import { PanelModule } from 'primeng/primeng';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { StockTradeComponent } from './Components/LandingPage/current-portfolio/Subcomponents/stock-trade/stock-trade.component';
+import { TradeLineItemComponent } from './Components/LandingPage/current-portfolio/Subcomponents/trade-line-item/trade-line-item.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     SummaryComponent,
     StockLineItemComponent,
     PortfolioComponentComponent,
-    IterableMap
+    IterableMap,
+    StockTradeComponent,
+    TradeLineItemComponent
   ],
   imports: [
     BrowserModule,

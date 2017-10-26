@@ -1,6 +1,6 @@
 <div class="ui-g-12">
   <p-panel header="Starting Portfolio" class="ui-g-6">
-    <div id='initPort' *ngIf="initialPortfolio" text>
+    <div id='initPort' *ngIf="initialPortfolio">
       <portfolio-component [portfolioDataSet]="(getInitialPortfolioData() | IterableMap)"></portfolio-component>
     </div>
   </p-panel>

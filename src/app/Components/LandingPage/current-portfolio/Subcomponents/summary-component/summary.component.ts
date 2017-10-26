@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {StockDataModel} from "./Class-Models/stock-data-model";
-import {GetStocksService} from "./Services/get-stocks.service";
-import {stockObjInterface, YahooDataModel} from "./Interfaces/yahooDataModel.interface";
+import {StockDataModel} from "../../Class-Models/stock-data-model";
+import {GetStocksService} from "../../Services/get-stocks.service";
+import {stockObjInterface, YahooDataModel} from "../../Interfaces/yahooDataModel.interface";
 
 @Component({
   selector: 'app-summary',
@@ -13,7 +13,6 @@ export class SummaryComponent implements OnInit {
   //encapsulated variables.
   private initialPortfolio = null;
   private desirePortfolio = null;
-  private myBool = false;
 
   //lightweight constructor for dependency injections
   constructor(private getStockService : GetStocksService) {}
@@ -51,31 +50,26 @@ export class SummaryComponent implements OnInit {
 
             this.initialPortfolio.get(stockData.symbol).setStockPrice(Number.parseFloat(stockData.price));
             this.initialPortfolio.get(stockData.symbol).setTotalStockVal(totalWorthOfShares);
+
+            this.getStockService.setInitialPortfolioData(this.initialPortfolio);
+            this.getStockService.setFinalPortfolioPrelimData(this.desirePortfolio);
           }
         });
       },
       (error : Error) => { console.log(error) },
-      () => {
-          this.myBool = true;
-          // this.cdRef.detectChanges();
-          console.log('[Yahoo Stock Call] Completed ... ');
-    })
+      () => { console.log('[Yahoo Stock Call] Completed ... ')}
+    );
   }
 
   /**
    * Gets an array representing the initially owned stocks
    * @returns {Map<string,StockDataModel>>}
    */
-  getInitialPortfolioData() : Map<string,StockDataModel> {
-    return this.initialPortfolio;
-  }
+  getInitialPortfolioData() : Map<string,StockDataModel> { return this.initialPortfolio }
 
   /**
    * gets an array representing the new stock portfolio
    * @returns {Map<string,StockDataModel>}
    */
-  getDesiredPortfolioData() : Map<string,StockDataModel>{
-    return this.desirePortfolio;
-  }
-
+  getDesiredPortfolioData() : Map<string,StockDataModel>{ return this.desirePortfolio }
 }

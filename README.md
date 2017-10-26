@@ -1,5 +1,10 @@
 # AptosStockPortfolio
 
+Hi Everyone! This is a quick project exercise that builds out a summary display for stock transactions.  The summary panel shows a starting stock portfolio and its worth.
+Additionally the summary panel shows a desired stock portfolio and gives information about its worth, number of shares, and price per unit.
+Beneath the summary panel, there is a panel that shows the transactions made to obtain the final portfolio and all of the respective metadata for 
+each transaction.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
 
 ## Development server
