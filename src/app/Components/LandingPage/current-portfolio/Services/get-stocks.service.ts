@@ -24,34 +24,4 @@ export class GetStocksService {
   getStocks() : Observable<YahooDataModel>{
     return this.http.get<YahooDataModel>(this.yahooFinanceURL)
   }
-
-  /**
-   * Provides all known stock data for use among unrelated components.
-   *
-   * @returns {Observable} Emits a single item of type Map<string, StockDataModel> where one can find all stock info by using its symbol as a key
-   */
-  shareStockData() : Observable {
-    this.shareable.set('AAPL', this.initPort.get('AAPL'));
-    this.shareable.set('CYBR', this.initPort.get('CYBR'));
-    this.shareable.set('ABB', this.initPort.get('ABB'));
-    this.shareable.set('GOOG', this.initPort.get('GOOG'));
-
-    this.shareable.set('GFN', this.desiredPort.get('GFN'));
-    this.shareable.set('ACAD', this.desiredPort.get('ACAD'));
-
-    return Observable.from(this.shareable);
-  }
-
-  /**
-   * set initial portfolio data for sharing across unrelated components
-   * @param {Map<string, StockDataModel>} initData
-   */
-  setInitialPortfolioData(initData : Map<string, StockDataModel>) : void { this.initPort = initData; }
-
-  /**
-   * set some preliminary data for the final portfolio to share across unrelated components
-   * @param {Map<string, StockDataModel>} prelimData
-   */
-  setFinalPortfolioPrelimData(prelimData : Map<string, StockDataModel>) : void { this.desiredPort = prelimData }
-
 }

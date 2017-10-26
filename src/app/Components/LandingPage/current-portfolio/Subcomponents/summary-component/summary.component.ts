@@ -50,9 +50,6 @@ export class SummaryComponent implements OnInit {
 
             this.initialPortfolio.get(stockData.symbol).setStockPrice(Number.parseFloat(stockData.price));
             this.initialPortfolio.get(stockData.symbol).setTotalStockVal(totalWorthOfShares);
-
-            this.getStockService.setInitialPortfolioData(this.initialPortfolio);
-            this.getStockService.setFinalPortfolioPrelimData(this.desirePortfolio);
           }
         });
       },
