@@ -1,13 +1,13 @@
 <div class="ui-g-12">
   <p-panel header="Starting Portfolio" class="ui-g-6">
-    <div id='initPort' *ngIf="initialPortfolio">
-      <portfolio-component [portfolioDataSet]="(getInitialPortfolioData() | IterableMap)"></portfolio-component>
+    <div id='initPortBool' *ngIf="initialPortfolio">
+      <portfolio-component id='initPort'[portfolioDataSet]="(initialPortfolio | IterableMap)"></portfolio-component>
     </div>
   </p-panel>
 
   <p-panel header="Ending Portfolio" class="ui-g-6">
-    <div class="finalPort">
-      <portfolio-component [portfolioDataSet]="(getDesiredPortfolioData() | IterableMap)"></portfolio-component>
+    <div class="finalPortBool">
+      <portfolio-component id='finalPort' [portfolioDataSet]="(desirePortfolio | IterableMap)"></portfolio-component>
     </div>
   </p-panel>
 </div>

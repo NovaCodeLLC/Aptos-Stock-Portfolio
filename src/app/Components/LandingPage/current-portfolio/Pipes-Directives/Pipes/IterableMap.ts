@@ -7,7 +7,7 @@ Allows a developer to use an *ngFor directive to iterate over a map object of ty
  */
 @Pipe({name: 'IterableMap'})
 export class IterableMap implements PipeTransform {
-  transform(value: Map<string, any>): any[] {
+  transform(value: Map<string, any>, args: allowableArgs): any[] {
 
     //snag keys off the map and make an array hold the data
     let keyArr = value.keys();
@@ -16,10 +16,23 @@ export class IterableMap implements PipeTransform {
     // loop through the Map, and
     // push values to the return array
     Array.from(keyArr).forEach( (key) => {
-      dataArr.push(value.get(key));
+      switch(args) {
+        case allowableArgs.returnKeyValues:
+          dataArr.push({key: key, value: value.get(key)});
+          break;
+
+        default:
+          dataArr.push(value.get(key));
+          break;
+      }
     });
 
     // return the resulting array
     return dataArr;
   }
+}
+
+
+export enum allowableArgs {
+  returnKeyValues = 0
 }

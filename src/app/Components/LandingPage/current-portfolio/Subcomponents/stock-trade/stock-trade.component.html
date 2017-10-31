@@ -1,0 +1,19 @@
+<p-panel id="Mounting" class="ui-g-12" header="Trades Made to Reach Final Portfolio">
+  <div id='rendering-container' class="ui-g" *ngIf="true" >
+      <div id='content-body' class="ui-g-12">
+
+        <div id="traderHeaders" class="ui-g ui-widget-header">
+          <div class="ui-g-3">Symbol</div>
+          <div class="ui-g-3"></div>
+          <div class="ui-g-3">Units Bought</div>
+          <div class="ui-g-3">Units Sold</div>
+        </div>
+
+        <div *ngIf="stockMetaData?.numberSharesTraded?.size > 0">
+          <div *ngFor="let trade of stockMetaData?.numberSharesTraded | IterableMap: 0; i as index">
+            <app-trade-line-item [tracker]="trade" [ngClass]="(trade['value'] > 0)? green:red"></app-trade-line-item>
+          </div>
+        </div>
+      </div>
+    </div>
+  </p-panel>

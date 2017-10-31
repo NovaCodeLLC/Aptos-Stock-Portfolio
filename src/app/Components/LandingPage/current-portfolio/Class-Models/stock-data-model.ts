@@ -12,70 +12,70 @@ export class StockDataModel {
    * @param {Number} totalStockVal - Total value of owned shares (shares * stockPrice)
    * @param {Number} sharePercentage - Percentage of total stock to be obtained for the total desired final portfolio
    */
-  constructor(private symbol : String,
-              private shares : Number,
-              private stockPrice? : Number,
-              private totalStockVal? : Number,
-              private sharePercentage? : Number){}
+  constructor(private symbol : string,
+              private shares : number,
+              private stockPrice? : number,
+              private totalStockVal? : number,
+              private sharePercentage? : number){}
 
   /**
    * set stock symbol
-    * @param {String} symbol
+    * @param {string} symbol
    */
-  public setSymbol( symbol : String ) : void { this.symbol = symbol }
+  public setSymbol( symbol : string ) : void { this.symbol = symbol }
 
   /**
    * set the total number of owned shares
-   * @param {Number} shares
+   * @param {number} shares
    */
-  public setShares( shares : Number ) : void { this.shares = shares }
+  public setShares( shares : number ) : void { this.shares = shares }
 
   /**
    * set stock price
-   * @param {Number} stockPrice
+   * @param {number} stockPrice
    */
-  public setStockPrice( stockPrice : Number ) : void { this.stockPrice = stockPrice }
+  public setStockPrice( stockPrice : number ) : void { this.stockPrice = stockPrice }
 
   /**
    * set the sum total value of all owned units
-   * @param {Number} totalStockVal
+   * @param {number} totalStockVal
    */
-  public setTotalStockVal( totalStockVal : Number ) : void { this.totalStockVal = totalStockVal }
+  public setTotalStockVal( totalStockVal : number ) : void { this.totalStockVal = totalStockVal }
 
   /**
    * set the desired total percentage that this stock will make up in the final portfolio
-   * @param {Number} sharePercentage
+   * @param {number} sharePercentage
    */
-  public setSharePercentage( sharePercentage : Number ) : void { this.sharePercentage = sharePercentage }
+  public setSharePercentage( sharePercentage : number ) : void { this.sharePercentage = sharePercentage }
 
 
   /**
    * get stock symbol
-   * @returns {String}
+   * @returns {string}
    */
-  public getSymbol() : String { return this.symbol }
+  public getSymbol() : string { return this.symbol }
 
   /**
    * get the total number of owned shares
-   * @returns {Number}
+   * @returns {number}
    */
-  public getShares() : Number { return this.shares }
+  public getShares() : number { return this.shares }
 
   /**
    * get the stock's price per unit
-   * @returns {Number}
+   * @returns {number}
    */
-  public getStockPrice() : Number { return this.stockPrice }
+  public getStockPrice() : number { return this.stockPrice }
 
   /**
    * get the sum total value of all owned units
-   * @returns {Number}
+   * @returns {number}
    */
-  public getTotalStockVal() : Number { return this.totalStockVal }
+  public getTotalStockVal() : number { return this.totalStockVal }
 
   /**
    * get the desired total percentage that this stock will make up in the final portfolio
-   * @returns {Number}
+   * @returns {number}
    */
-  public getSharePercentage() : Number { return this.sharePercentage}
+  public getSharePercentage() : number { return this.sharePercentage}
 }
